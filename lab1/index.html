@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="audioPlayer" controls>
+        <source id="audioSource">
+    </audio>
+    <video id="videoPlayer" controls>
+        <source id="videoSource">
+    </video>
+    <script> 
+        const url = new URL(window.location);
+        const vid = url.searchParams.get("videoFile")
+        const aud = url.searchParams.get("audioFile")
+        console.log(vid)
+        console.log(aud)
+        if(vid !== null) {
+            const vidElement = document.getElementById("videoSource");
+            vidElement.setAttribute("src", vid);
+        }
+        if(aud !== null) {
+            const audElement = document.getElementById("audioSource");
+            audElement.setAttribute("src", aud);
+        }
+    </script>
+</body>
+</html>
