@@ -11,8 +11,10 @@
     <video id="videoPlayer"></video>
     <script> 
         const url = new URL(window.location);
-        const vid = url.searchParams.get("videoPlayer")
-        const aud = url.searchParams.get("audioPlayer")
+        const vid = url.searchParams.get("videoFile")
+        const aud = url.searchParams.get("audioFile")
+        console.log(vid)
+        console.log(aud)
         if(vid !== null) {
             const vidElement = document.getElementById("videoPlayer");
             vidElement.setAttribute("source", vid);
