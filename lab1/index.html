@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <audio id="audioPlayer"></audio>
-    <video id="videoPlayer"></video>
+    <audio id="audioPlayer" controls>
+        <source id="audioSource"></audio>
+    </source>
+    </audio>
+    <video id="videoPlayer" controls>
+        <source id="videoSiurce">
+    </source>
+    </video>
     <script> 
         const url = new URL(window.location);
         const vid = url.searchParams.get("videoFile")
@@ -16,12 +22,12 @@
         console.log(vid)
         console.log(aud)
         if(vid !== null) {
-            const vidElement = document.getElementById("videoPlayer");
-            vidElement.setAttribute("source", vid);
+            const vidElement = document.getElementById("videoSource");
+            vidElement.setAttribute("src", vid);
         }
         if(aud !== null) {
-            const audElement = document.getElementById("audioPlayer");
-            audElement.setAttribute("source", aud);
+            const audElement = document.getElementById("audioSource");
+            audElement.setAttribute("src", aud);
         }
     </script>
 </body>
