@@ -9,7 +9,18 @@
 <body>
     <audio id="audioPlayer"></audio>
     <video id="videoPlayer"></video>
-    
+    <script> 
+        const url = new URL(window.location);
+        const vid = url.searchParams.get("videoPlayer")
+        const aud = url.searchParams.get("audioPlayer")
+        if(vid !== null) {
+            const vidElement = document.getElementById("videoPlayer");
+            vidElement.setAttribute("source", vid);
+        }
+        if(aud !== null) {
+            const audElement = document.getElementById("audioPlayer");
+            audElement.setAttribute("source", aud);
+        }
     </script>
 </body>
 </html>
